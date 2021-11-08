@@ -11,5 +11,24 @@ public class song {
         public String blurred;
         public String play;
     }
+    public class stores{
+
+    }
+    public class streams{
+
+    }
+    public class artists{
+
+    }
+    public class share{
+
+    }
+    public String alias;
+    public String url;
+    public class actions{
+        public String name;
+        public String type;
+        public String id;
+    }
 
 }
