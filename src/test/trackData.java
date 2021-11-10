@@ -69,5 +69,4 @@ public class trackData {
         public String url;
         public List<Action> actions;
     }
-
 }
