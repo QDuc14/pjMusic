@@ -1,9 +1,9 @@
-package DTO;
+package songInformation;
 
 public class images {
-    public String defauls;
     public String blurred;
     public String play;
+    public String defauls;
 
     public images(String defauls, String blurred, String play) {
         this.defauls = defauls;

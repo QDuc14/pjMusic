@@ -1,4 +1,4 @@
-package DTO;
+package songInformation;
 
 public class share {
     public String subject;

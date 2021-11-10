@@ -1,4 +1,4 @@
-package DTO;
+package songInformation;
 public class actions {
     public String name;
     public String type;

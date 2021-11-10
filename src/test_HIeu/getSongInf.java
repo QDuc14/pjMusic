@@ -5,7 +5,7 @@ import kong.unirest.HttpResponse;
 import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 import kong.unirest.json.JSONArray;
-import DTO.*;
+import songInformation.*;
 
 public class getSongInf {
 

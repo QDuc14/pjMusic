@@ -1,8 +1,6 @@
-package DTO;
+package songInformation;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class songInf {
     public String id;
@@ -14,7 +12,7 @@ public class songInf {
 
     }
 
-    public songInf(String id, DTO.heading heading, DTO.images images, DTO.actions[] actions, String alias, String url) {
+    public songInf(String id, songInformation.heading heading, songInformation.images images, songInformation.actions[] actions, String alias, String url) {
         this.id = id;
         this.heading = heading;
         this.images = images;
@@ -50,11 +48,11 @@ public class songInf {
             this.url = url;
         }
 
-    public DTO.actions[] getActions() {
+    public songInformation.actions[] getActions() {
         return actions;
     }
 
-    public void setActions(DTO.actions[] actions) {
+    public void setActions(songInformation.actions[] actions) {
         this.actions = actions;
     }
 
