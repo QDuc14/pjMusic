@@ -17,7 +17,10 @@ public class trackDetails {
         JsonNode results = response.getBody();
         System.out.println(results);
 
-//        String jsonStr = results.toString();
+        //Convert json to String
+        String jsonStr = results.toString();
+        System.out.println(jsonStr);
+        
 //        lyrics lyric = gson.fromJson(jsonStr, lyrics.class);
 //        System.out.println(lyric);
     }
