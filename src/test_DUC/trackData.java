@@ -1,4 +1,4 @@
-package test;
+package test_DUC;
 
 import java.util.List;
 
