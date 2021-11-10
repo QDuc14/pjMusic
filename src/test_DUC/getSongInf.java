@@ -16,6 +16,7 @@ public class getSongInf {
 				.asString();
 		String infString = response.getBody();
 //		for(int i = 0; i < list.length();i++){
+			System.out.println("alo alo alo alo alo alo alo alo alo alo alo alo alo alo");
 			System.out.println(infString);
 //		}
 
