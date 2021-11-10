@@ -55,10 +55,5 @@ public class songInf {
     public void setActions(songInformation.actions[] actions) {
         this.actions = actions;
     }
-
-    @Override
-    public String toString(){
-            return Arrays.toString(getActions());
-    }
 }
 
