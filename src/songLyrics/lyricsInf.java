@@ -1,17 +1,17 @@
 package songLyrics;
 
-public class lyrics {
+public class lyricsInf {
     public String id;
     public String type;
     public int layout;
-    public String tittle;
+    public String title;
     public String url;
     public String apple_music_url;
     public String subtitle;
     public images image;
     public share share;
     public hub hub;
-    public sections[] section;
+    public sections[] sections;
     public artists[] artists;
     public String alias;
     public genres genre;
@@ -19,21 +19,21 @@ public class lyrics {
     public String track_adam_id;
     public String release_date;
 
-    public lyrics() {
+    public lyricsInf() {
     }
 
-    public lyrics(String id, String type, int layout, String tittle, String url, String apple_music_url, String subtitle, images image, songLyrics.share share, songLyrics.hub hub, sections[] section, artists[] artists, String alias, genres genre, String album_adam_id, String track_adam_id, String release_date) {
+    public lyricsInf(String id, String type, int layout, String tittle, String url, String apple_music_url, String subtitle, images image, songLyrics.share share, songLyrics.hub hub, sections[] sections, artists[] artists, String alias, genres genre, String album_adam_id, String track_adam_id, String release_date) {
         this.id = id;
         this.type = type;
         this.layout = layout;
-        this.tittle = tittle;
+        this.title = title;
         this.url = url;
         this.apple_music_url = apple_music_url;
         this.subtitle = subtitle;
         this.image = image;
         this.share = share;
         this.hub = hub;
-        this.section = section;
+        this.sections = sections;
         this.artists = artists;
         this.alias = alias;
         this.genre = genre;
@@ -66,12 +66,12 @@ public class lyrics {
         this.layout = layout;
     }
 
-    public String getTittle() {
-        return tittle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTittle(String tittle) {
-        this.tittle = tittle;
+    public void setTitle(String tittle) {
+        this.title = tittle;
     }
 
     public String getUrl() {
@@ -122,12 +122,12 @@ public class lyrics {
         this.hub = hub;
     }
 
-    public sections[] getSection() {
-        return section;
+    public songLyrics.sections[] getSections() {
+        return sections;
     }
 
-    public void setSection(sections[] section) {
-        this.section = section;
+    public void setSections(sections[] sections) {
+        this.sections = sections;
     }
 
     public artists[] getArtists() {
