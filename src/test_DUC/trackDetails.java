@@ -13,14 +13,11 @@ public class trackDetails {
                 .header("x-rapidapi-host", "shazam-core.p.rapidapi.com")
                 .header("x-rapidapi-key", "533d42cd24msheb307f07f2b6174p1c9e7fjsn952ba01d8c63")
                 .asJson();
-
         Gson gson = new Gson();
         JsonNode results = response.getBody();
-
         //Convert json to String
         String jsonStr = results.toString();
         System.out.println(jsonStr);
-
         //create lyricsInf obj from jsonStr
         lyricsInf lyricsInf = gson.fromJson(jsonStr, songLyrics.lyricsInf.class);
         for(int i = 0; i < lyricsInf.getSections()[1].getText().length; i++){
