@@ -1,11 +1,12 @@
 package test_DUC;
 
+import com.google.gson.JsonElement;
 import kong.unirest.HttpResponse;
 import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 import com.google.gson.Gson;
 import songLyrics.*;
-
+import sectionsItem.*;
 public class trackDetails {
     public static void main(String[] args) {
         HttpResponse<JsonNode> response = Unirest.get("https://shazam-core.p.rapidapi.com/v1/tracks/details?track_id=341759650")
@@ -22,12 +23,8 @@ public class trackDetails {
 
         //create lyricsInf obj from jsonStr
         lyricsInf lyricsInf = gson.fromJson(jsonStr, songLyrics.lyricsInf.class);
-        System.out.println(lyricsInf.getTitle());
-
-        System.out.println(lyricsInf.getSections());
-        //songLyrics.sections@28eaa59a
-
-//        lyricsInf lyric = gson.fromJson(jsonStr, lyricsInf.class);
-//        System.out.println(lyric);
+        for(int i = 0; i < lyricsInf.getSections()[1].getText().length; i++){
+            System.out.println(lyricsInf.getSections()[1].getText()[i]);
+        }
     }
 }
