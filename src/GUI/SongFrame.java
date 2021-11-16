@@ -1,9 +1,7 @@
 package GUI;
-
 import javax.swing.*;
-import java.awt.event.*;
-import java.awt.*;
-public class Frame1 extends JFrame {
+
+public class SongFrame extends JFrame {
     private JPanel main;
     private JTextField textField1;
     private JFormattedTextField formattedTextField1;
@@ -16,14 +14,14 @@ public class Frame1 extends JFrame {
     private JButton artistSongButton;
     private JScrollPane listRecommend;
 
-    public Frame1(String title){
+    public SongFrame(String title){
         super(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(main);
         this.pack();
     }
     public static void main(String[] args){
-        JFrame frame = new Frame1( "Play Song");
+        JFrame frame = new SongFrame( "Play Song");
         frame.setVisible(true);
     }
 }
