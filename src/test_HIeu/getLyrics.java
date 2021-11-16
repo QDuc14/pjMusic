@@ -5,10 +5,12 @@ import kong.unirest.HttpResponse;
 import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 import songLyrics.lyricsInf;
-
+import BLL.*;
 public class getLyrics {
     public static void main(String[] args){
-        HttpResponse<JsonNode> response = Unirest.get("https://shazam-core.p.rapidapi.com/v1/tracks/details?track_id=341759650")
+
+        String id = ;
+        HttpResponse<JsonNode> response = Unirest.get("https://shazam-core.p.rapidapi.com/v1/tracks/details?track_id="+id)
                 .header("x-rapidapi-host", "shazam-core.p.rapidapi.com")
                 .header("x-rapidapi-key", "533d42cd24msheb307f07f2b6174p1c9e7fjsn952ba01d8c63")
                 .asJson();

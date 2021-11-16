@@ -8,7 +8,7 @@ import kong.unirest.json.JSONArray;
 import songInformation.songInf;
 
 public class Songs {
-
+    Gson gson = new Gson();
     public JSONArray getDataFromAPI (String query){
         //Get songs data from api
         HttpResponse<JsonNode> response = Unirest.get("https://shazam-core.p.rapidapi.com/v1/tracks/search?query=" + query)
@@ -21,20 +21,22 @@ public class Songs {
         JSONArray list = infString.getArray();
         return list;
     }
-
-    public String getSongId(JSONArray list, String query){
-        Gson gson = new Gson();
+    public songInfomation getSongInfo(String query, JSONArray list){
+        songInfomation song = new songInfomation();
         String resultsSong;
-        String result = "";
-        //Find song = query
+        String result;
         for(int i = 0; i < list.length(); i++){
             resultsSong = list.get(i).toString();
             //Parse json to obj
             songInf data = gson.fromJson(resultsSong, songInf.class);
-            if(query.equalsIgnoreCase(data.heading.title))
-                result = data.getId();
+            if(query.equalsIgnoreCase(data.heading.title)) {
+                song.setId(data.getId());
+                song.setTitle(data.heading.getTitle());
+                song.setSubtitle(data.heading.getSubtitle());
+                song.setArtist(data.getAlias());
+            }
         }
-        return result;
+        return song;
     }
 
 
@@ -42,6 +44,7 @@ public class Songs {
         Songs song = new Songs();
         String query = "nơi này có anh";
         JSONArray list = song.getDataFromAPI(query);
-        System.out.println(song.getSongId(list, query));
+        songInfomation result = song.getSongInfo(query,list);
+        System.out.println(result.getId());
     }
 }
