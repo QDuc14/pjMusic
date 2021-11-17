@@ -6,10 +6,13 @@ import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 import kong.unirest.json.JSONArray;
 import songInformation.songInf;
+import songLyrics.lyricsInf;
 
 public class Songs {
+
     Gson gson = new Gson();
-    public JSONArray getDataFromAPI (String query){
+
+    public JSONArray getSongDataFromAPI (String query){
         //Get songs data from api
         HttpResponse<JsonNode> response = Unirest.get("https://shazam-core.p.rapidapi.com/v1/tracks/search?query=" + query)
                 .header("x-rapidapi-host", "shazam-core.p.rapidapi.com")
@@ -21,6 +24,7 @@ public class Songs {
         JSONArray list = infString.getArray();
         return list;
     }
+
     public songInfomation getSongInfo(String query, JSONArray list){
         songInfomation song = new songInfomation();
         String resultsSong;
@@ -39,12 +43,36 @@ public class Songs {
         return song;
     }
 
+    public JsonNode getLyricsDataFromAPI(String id) {
+        HttpResponse<JsonNode> response = Unirest.get("https://shazam-core.p.rapidapi.com/v1/tracks/details?track_id=" + id)
+                .header("x-rapidapi-host", "shazam-core.p.rapidapi.com")
+                .header("x-rapidapi-key", "533d42cd24msheb307f07f2b6174p1c9e7fjsn952ba01d8c63")
+                .asJson();
+        JsonNode results = response.getBody();
+        return results;
+    }
+
+    public String[] getLyricsInf(JsonNode list ){
+
+        String jsonStr = list.toString();
+        lyricsInf lyricsInf = gson.fromJson(jsonStr, songLyrics.lyricsInf.class);
+        return lyricsInf.getSections()[1].getText();
+    }
 
     public static void main(String[] args) throws Exception {
         Songs song = new Songs();
-        String query = "nơi này có anh";
-        JSONArray list = song.getDataFromAPI(query);
+        //Query tu client
+        String query = "let her go";
+        //Lay getSongDataFromAPI
+        JSONArray list = song.getSongDataFromAPI(query);
+        //Lay thong tin bai hat tu du lieu cua list
         songInfomation result = song.getSongInfo(query,list);
-        System.out.println(result.getId());
+
+        String id = result.getId();
+        String[] lyricsArray = song.getLyricsInf(song.getLyricsDataFromAPI(id));
+        for(int i = 0; i < lyricsArray.length; i++){
+            System.out.println(lyricsArray[i]);
+        }
+
     }
 }

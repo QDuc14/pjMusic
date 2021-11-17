@@ -5,6 +5,7 @@ public class songInfomation {
     public String title;
     public String subtitle;
     public String artist;
+    public String[] lyrics;
 
     public songInfomation (){}
     public songInfomation(String id, String title, String subtitle, String artist) {
