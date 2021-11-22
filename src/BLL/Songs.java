@@ -53,7 +53,6 @@ public class Songs {
     }
 
     public String[] getLyricsInf(JsonNode list ){
-
         String jsonStr = list.toString();
         lyricsInf lyricsInf = gson.fromJson(jsonStr, songLyrics.lyricsInf.class);
         return lyricsInf.getSections()[1].getText();
@@ -62,7 +61,7 @@ public class Songs {
     public static void main(String[] args) throws Exception {
         Songs song = new Songs();
         //Query tu client
-        String query = "let her go";
+        String query = "Let it go";
         //Lay getSongDataFromAPI
         JSONArray list = song.getSongDataFromAPI(query);
         //Lay thong tin bai hat tu du lieu cua list
