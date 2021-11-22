@@ -5,6 +5,9 @@ import BLL.songInfomation;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.util.Vector;
 
 public class SongFrame extends JFrame {
     private JPanel main;
@@ -37,7 +40,16 @@ public class SongFrame extends JFrame {
 
             }
         });
+
     }
+//    public listRecommend(){
+//        Vector id = new Vector();
+//        Vector name = new Vector();
+//        Vector singer = new Vector();
+//        id.add("ID");
+//        name.add("Song name");
+//        singer.add("Singer");
+//    }
     public static void main(String[] args){
         JFrame frame = new SongFrame( "Play Song");
         frame.setVisible(true);

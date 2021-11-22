@@ -45,7 +45,7 @@ public class test {
     public static void main (String[] args) throws Exception {
         // TODO Auto-generated method stub
         test app = new test();
-        String query = "Let her go";
+        String query = "Nơi này có anh";
         String id = "341759650";
         JsonArray resultList = app.getSongDataFromAPI(query);
         for(int i = 0; i < resultList.size(); i++){
