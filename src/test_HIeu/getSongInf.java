@@ -14,7 +14,7 @@ public class getSongInf {
 		String query = "Nơi này có anh";
 		Gson gson = new Gson();
 		//Get songs data from api
-		HttpResponse<JsonNode> response = Unirest.get("https://shazam-core.p.rapidapi.com/v1/tracks/search?query=Nơi này có anh")
+		HttpResponse<JsonNode> response = Unirest.get("https://shazam-core.p.rapidapi.com/v1/tracks/search?query=noi nay co anh")
 				.header("x-rapidapi-host", "shazam-core.p.rapidapi.com")
 				.header("x-rapidapi-key", "533d42cd24msheb307f07f2b6174p1c9e7fjsn952ba01d8c63")
 				.asJson();
