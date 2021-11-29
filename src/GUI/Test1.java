@@ -9,16 +9,17 @@ import java.awt.event.ComponentEvent;
 import java.util.Vector;
 public class Test1 extends JFrame{
     private JPanel panel1;
-    private JButton button1;
-    private JButton button2;
-    private JTextField textField1;
     private JTextField textField2;
     private JProgressBar progressBar1;
     private JButton playButton;
     private JButton nextButton;
     private JSlider slider1;
-    private JTable table1;
     private JEditorPane editorPane1;
+    private JTable table1;
+    private JButton songButton;
+    private JButton artistButton;
+    private JTextField textField1;
+    private JButton searchButton;
 
     public Test1(String title) {
         super(title);

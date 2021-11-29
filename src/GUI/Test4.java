@@ -7,9 +7,9 @@ public class Test4 extends JFrame{
     private JEditorPane editorPane1;
     private JButton button1;
     private JButton button2;
-    private JTable table1;
-    private JTextField textField2;
+    private JTextField textField1;
     private JButton button3;
+    private JTable table1;
 
     public Test4(String title) {
         super(title);
