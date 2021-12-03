@@ -8,7 +8,7 @@ import com.google.gson.JsonParser;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 
-public class test {
+public class runApp {
 
     Gson gson = new Gson();
 
@@ -44,7 +44,7 @@ public class test {
 
     public static void main (String[] args) throws Exception {
         // TODO Auto-generated method stub
-        test app = new test();
+        runApp app = new runApp();
         String query = "Nơi này có anh";
         String id = "341759650";
         JsonArray resultList = app.getSongDataFromAPI(query);

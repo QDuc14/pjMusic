@@ -5,8 +5,6 @@ import kong.unirest.HttpResponse;
 import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 import com.google.gson.Gson;
-import songLyrics.*;
-import sectionsItem.*;
 public class trackDetails {
     public static void main(String[] args) {
         HttpResponse<JsonNode> response = Unirest.get("https://shazam-core.p.rapidapi.com/v1/tracks/details?track_id=341759650")
@@ -19,9 +17,6 @@ public class trackDetails {
         String jsonStr = results.toString();
         System.out.println(jsonStr);
         //create lyricsInf obj from jsonStr
-        lyricsInf lyricsInf = gson.fromJson(jsonStr, songLyrics.lyricsInf.class);
-        for(int i = 0; i < lyricsInf.getSections()[1].getText().length; i++){
-            System.out.println(lyricsInf.getSections()[1].getText()[i]);
-        }
+
     }
 }

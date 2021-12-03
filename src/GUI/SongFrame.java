@@ -1,13 +1,9 @@
 package GUI;
-import BLL.Songs;
-import BLL.songInfomation;
+
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
-import java.util.Vector;
 
 public class SongFrame extends JFrame {
     private JPanel main;
@@ -22,24 +18,11 @@ public class SongFrame extends JFrame {
     private JButton artistButton;
     private JTable tbListRecommend;
 
-    public SongFrame(String title){
+    public SongFrame(String title) {
         super(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(main);
         this.pack();
-
-        Songs songs = new Songs();
-        searchButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String query = txtSearch.getText();
-                songInfomation result = songs.getSongInfo(query,songs.getSongDataFromAPI(query));
-                txtSongName.setText(result.getTitle());
-                txtArtist.setText(result.artist);
-                txtSinger.setText(result.getSubtitle());
-
-            }
-        });
 
     }
 //    public listRecommend(){

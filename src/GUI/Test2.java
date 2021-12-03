@@ -1,12 +1,4 @@
 package GUI;
-import BLL.Songs;
-import BLL.songInfomation;
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
-import java.util.Vector;
 import javax.swing.*;
 
 public class Test2 extends JFrame{

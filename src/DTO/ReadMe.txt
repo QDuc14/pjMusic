@@ -1,1 +1,0 @@
-Package này là khu vực trung gian giữa BLL và GUI
