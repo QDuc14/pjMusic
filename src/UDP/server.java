@@ -26,15 +26,8 @@ public class server {
                     break;
                 }
 
-
-                    // nối chuỗi
-//                    StringBuilder sb = new StringBuilder(tmp);
-//                    sb.append("789");
-//                    tmp = sb.toString();
-//                    //In hoa
-//                   tmp = tmp.toUpperCase();
                 //trả về client
-                String str = checkinput(tmp);
+                String str = tmp;
                 dpsend = new DatagramPacket(tmp.getBytes(), tmp.getBytes().length, dpreceive.getAddress(), dpreceive.getPort());
                 System.out.println("Server sent back " + str + " to client");
                 socket.send(dpsend);
@@ -45,10 +38,4 @@ public class server {
             System.err.println(e);
         }
     }
-    public static String checkinput(String input){
-                Pattern pattern = Pattern.compile("[[^a-z A-Z]&&[0-9]]");
-                Matcher matcher = pattern.matcher(input);
-                String xoakytuDB = matcher.replaceAll("");
-                return xoakytuDB;
-        }
 }
